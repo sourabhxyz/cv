@@ -1,0 +1,188 @@
+% Welcome to the simple Undergraduate Complexity Research CV-resume template!
+% Please delete any sections that do not apply to your past experiences. We do not expect that applicants will have items for all of the sections included here. You can also rename or revise sections to best fit with your personal accomplishments.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[normalem]{ulem}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[colorlinks = true]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{multicol}
+\input{glyphtounicode}
+
+\usepackage{baskervillef}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+% \usepackage{footnote}
+% \makesavenoteenv{tabular}
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\setlength{\footskip}{10pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{0.0in}
+\addtolength{\evensidemargin}{0.0in}
+\addtolength{\textwidth}{0.0in}
+\addtolength{\topmargin}{0.2in}
+\addtolength{\textheight}{0.0in}
+
+
+\urlstyle{same}
+
+%\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \it\vspace{3pt}\Large
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item{
+    {#1 \vspace{-3pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+\begin{document}
+
+
+\begin{center}
+    {\LARGE Sourabh Aggarwal} \\ \vspace{7pt}
+    \faGithub \href{https://github.com/sourabhxyz}{\large{ sourabhxyz }} \faTwitter \href{https://twitter.com/SourabhLight}{\large{ SourabhLight }} \faGlobe \href{https://sourabh.xyz}{\large{ sourabh.xyz }}\\ 
+    \faEnvelope \href{mailto:swasti@sourabh.xyz}{\large{ swasti@sourabh.xyz }}
+\end{center}
+
+
+%-----------EDUCATION-----------
+% Please list your current institution first and then past schools in reverse chronology. No need for GPA, etc. You do not need to include high school but may do so if there are accomplishments you would like to highlight.
+\section{Education}
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+        {Indian Institute of Technology, Palakkad\footnotemark[1]}{2016 -- 2020}
+        {B. Tech, Computer Science \& Engineering}{}
+      \resumeItemListStart
+        \resumeItem{\href{https://youtu.be/DVCxygL8xoQ?t=7310}{Gold medalist}, ranked $1^{st}$ by securing highest CGPA.}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Specialized Skills}
+% This section can include programming or spoken languages, text editing and general software knowledge, certifications, version control or project management tools, or other skills that might be relevant. You can include as many or as few as you like: delete or add as needed.  
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Haskell}{}
+      {}{}
+      \vspace{-18pt}\resumeItemListStart
+        % \resumeItem{Learned Haskell as part of Emurgo's, \href{https://education.emurgo.io/courses/cardano-developer-professional}{Cardano Developer Professional} program.}
+        \resumeItem{Wrote an article on \href{https://www.reddit.com/r/haskell/comments/xzlhs4/segment_tress_lazy_persistent_in_haskell/}{Segment trees in Haskell}, showcasing both lazy \& persistent form.}
+        \resumeItemListEnd
+
+    \resumeSubheading
+      {Plutus \& Web Development}{}
+      {}{}
+      \vspace{-18pt}\resumeItemListStart
+        % \resumeItem{Completed \href{https://github.com/input-output-hk/plutus-pioneer-program}{Plutus Pioneer Program} and Gimbalabs, \href{https://gimbalabs.com/pbl}{Plutus Project Based Learning} course.}
+        \resumeItem{Founded \href{https://twitter.com/SourabhLight/status/1592148961267429377?s=20&t=c0VgvdcyPnpsl0muhDZvNA}{adaplays.xyz}, a site to play staked games where moves are verified by blockchain.}
+        \vspace{2pt}\begin{enumerate}
+          \item Key for \href{https://en.wikipedia.org/wiki/Galois/Counter_Mode}{AES-GCM} symmetric encryption algorithm is generated via \href{https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf}{PBKDF2} algorithm using user's set password. All the random numbers generated (under \href{https://en.wikipedia.org/wiki/Commitment_scheme}{commit-reveal} pattern) are effectively encrypted using this key and stored as an inline datum of UTxO.
+          \item Having minimum stake amount to be $3$ Ada, cost for minimum UTxO is effectively hidden and not relevant. Increase in transaction cost (44 lovelace per byte) is minimal.
+          \item Whole project is as such server-less, could be exported as a static site and run by end user locally with a sole limitation of giving a node provider such as \href{https://blockfrost.io}{blockfrost}. Design can handle up to $10^6$ UTxO's per game address.
+          \item Parameterized script (parameterized by UTxO) is used to get unique currency symbol (NFT) per game. Minted with first move of game \& burned with last. Off-chain code is written to verify whether a found game indeed has an NFT by generating currency symbol with parameters found from datum (of course, check is performed to see whether the token in question is present in UTxO or not). Since finding pre-image of such a hash function is next to impossible (their is also less entropy here as script code \& token names are fixed), this is secure.
+          \item Project is build with help of:
+          \vspace{-2pt}\begin{itemize}
+            \resumeItem{\textbf{Next.js} (\textbf{React} framework) with \textbf{typescript} (\textcolor{red}{\sout{: any}}).}
+            \resumeItem{\textbf{NextAuth.js}: to manage user session securely and having it synced across multiple windows / tabs.}
+            \resumeItem{\textbf{Chakra UI}: for styling.}
+            \resumeItem{\textbf{Lucid}: To create off-chain code for transactions.}
+          \end{itemize}
+        \end{enumerate}
+        \item My portfolio site, \href{https://sourabh.xyz}{sourabh.xyz} illustrates the use of \href{https://www.framer.com/motion/}{framer-motion}.
+        \resumeItemListEnd
+    \resumeSubheading
+      {Solidity}{}
+      {}{}
+      \vspace{-18pt}\resumeItemListStart
+        \resumeItem{Created \href{https://youtu.be/n3u3AcBBRbU}{20 hour long course} on \href{https://docs.soliditylang.org/en/latest/}{Solidity}, going over official documentation, introducing Ethereum Virtual Machine (EVM) \& \href{https://docs.ethers.io/v5/}{ethers.js}. Covering \href{https://hardhat.org/}{Hardhat} \& first 10 challenges of \href{https://www.damnvulnerabledefi.xyz/}{damnvulnerabledefi.xyz}.}
+        \resumeItemListEnd
+    \resumeSubheading
+      {Zero Knowledge Proofs}{}
+      {}{}
+      \vspace{-18pt}\resumeItemListStart
+        \resumeItem{Created a tutorial on zkSNARKs in collaboration with \href{https://www.cryptonaukri.com/}{cryptonaukri.com}. \href{https://www.youtube.com/watch?v=1tw2wB5i9z8}{First part} and \href{https://www.youtube.com/watch?v=wYdzIwqZBQ0}{Second part}.}
+        \resumeItemListEnd
+    \resumeSubheading
+      {C++ \& Competitive-Programming}{}
+      {}{}
+      \vspace{-18pt}\resumeItemListStart
+        \resumeItem{Our team, ``\href{https://www.codechef.com/rankings/ACMIND18}{team\_light}'' secured all India rank 20 in preliminary ICPC 2018.}
+        \resumeItem{Secured all India rank \href{https://www.hackerearth.com/challenges/competitive/JNJ-3addresscode-2019/leaderboard/page/2/}{86} among ~4k participants in a programming contest conducted by Johnson \& Johnson. \href{https://www.odrive.com/s/39993368-f029-4d75-ae26-f90263125596-623c5f9b}{Certificate}.}
+        \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------AWARDS & HONORS-----------
+\section{Other Honors} 
+% This section can include academic achievements – things like scholarships, Dean's list, honors societies – as well as recognition in your community - community service, religious study, volunteerism, military service, or anything else. You can remove or add sections as needed.
+\resumeSubHeadingListStart
+    \resumeSubheading
+    {China Youth Delegation}{}
+    {Indian Government}{2018}
+      \resumeItemListStart
+        \resumeItem{Selected by the Ministry of Youth Affairs \& Sports, Govt. of India among 200 students to represent India as a youth delegate in the ``Indian Youth Delegation to China - 2018''. \href{https://www.odrive.com/s/18d109df-fe3f-418f-ba0d-71d3dadc1cd7-623c6091}{Certificate} \& \href{https://www.odrive.com/s/e90e274f-6f34-466e-8a08-b8df892bcf4d-623c72e7}{report}.}
+      \resumeItemListEnd
+    \resumeSubheading
+    {B. Tech Project Appreciation}{}
+    {IIT Palakkad}{2020}
+      \resumeItemListStart
+        \resumeItem{\href{https://www.odrive.com/s/6db3947b-cb62-4a8f-90cd-056118248ec5-623c5499}{Received certificate of Merit} (given to best three projects per major) in appreciation of work done towards the final year B. Tech project titled, ``\href{https://github.com/sourabhxyz/btp}{Tiger to RISC V Compiler}'' which is a compiler written in Standard ML\footnotemark[2] to compile from \href{https://github.com/sourabhxyz/btp\#grammar-additions}{extended specification} of ``\href{https://www.cs.princeton.edu/~appel/modern/ml/}{Tiger}'' language to RISC V.}
+      \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+% %-----------OTHER EXPERIENCE-----------
+% \section{Other Experience}
+% % if you have been employed, do volunteer activities, or have held other formal or informal jobs, you can list them here.   
+% \resumeSubHeadingListStart
+
+%     \resumeSubheading
+%       {Internship}{May, 2019 -- July, 2019}
+%       {VMware, formerly Avi Networks}{}
+%       \resumeItemListStart
+%         \small\resumeItem{Upgraded logging packages to Go language (5x speedup) and did automation using Terraform and Ansible. \href{https://www.odrive.com/s/04a698a0-911e-4c0f-b92d-89623f393141-623c54d4}{Certificate}.}
+%         \resumeItemListEnd
+% \resumeSubHeadingListEnd
+
+
+\footnotetext[1]{\textit{\href{https://en.wikipedia.org/wiki/Indian_Institutes_of_Technology}{Indian Institutes of Technology}} form India's premier Technology institutions. Admission was secured into this school by being in top $0.4\%$ of roughly $1.3$ million applicants.}
+\footnotetext[2]{\textit{From \href{https://en.wikipedia.org/wiki/Standard_ML}{wiki}:} Standard ML (SML) is a general-purpose, modular, functional programming language with compile-time type checking and type inference. It is popular among compiler writers and programming language researchers, as well as in the development of theorem provers.}
+\end{document}
